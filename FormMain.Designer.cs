@@ -45,6 +45,7 @@
             this.btnReloadFiles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             // 
             // lblC1
             // 
-            this.lblC1.BackColor = System.Drawing.Color.Gray;
+            this.lblC1.BackColor = System.Drawing.Color.Red;
             this.lblC1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC1.ForeColor = System.Drawing.Color.White;
@@ -74,7 +75,7 @@
             // 
             // lblC2
             // 
-            this.lblC2.BackColor = System.Drawing.Color.Gray;
+            this.lblC2.BackColor = System.Drawing.Color.Red;
             this.lblC2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC2.ForeColor = System.Drawing.Color.White;
@@ -88,7 +89,7 @@
             // 
             // lblC3
             // 
-            this.lblC3.BackColor = System.Drawing.Color.Gray;
+            this.lblC3.BackColor = System.Drawing.Color.Red;
             this.lblC3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC3.ForeColor = System.Drawing.Color.White;
@@ -102,7 +103,7 @@
             // 
             // lblC4
             // 
-            this.lblC4.BackColor = System.Drawing.Color.Gray;
+            this.lblC4.BackColor = System.Drawing.Color.Red;
             this.lblC4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC4.ForeColor = System.Drawing.Color.White;
@@ -116,7 +117,7 @@
             // 
             // lblC5
             // 
-            this.lblC5.BackColor = System.Drawing.Color.Gray;
+            this.lblC5.BackColor = System.Drawing.Color.Red;
             this.lblC5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC5.ForeColor = System.Drawing.Color.White;
@@ -130,7 +131,7 @@
             // 
             // lblC6
             // 
-            this.lblC6.BackColor = System.Drawing.Color.Gray;
+            this.lblC6.BackColor = System.Drawing.Color.Red;
             this.lblC6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC6.ForeColor = System.Drawing.Color.White;
@@ -144,7 +145,7 @@
             // 
             // lblC7
             // 
-            this.lblC7.BackColor = System.Drawing.Color.Gray;
+            this.lblC7.BackColor = System.Drawing.Color.Red;
             this.lblC7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC7.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC7.ForeColor = System.Drawing.Color.White;
@@ -158,7 +159,7 @@
             // 
             // lblC8
             // 
-            this.lblC8.BackColor = System.Drawing.Color.Gray;
+            this.lblC8.BackColor = System.Drawing.Color.Red;
             this.lblC8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC8.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC8.ForeColor = System.Drawing.Color.White;
@@ -172,7 +173,7 @@
             // 
             // lblC9
             // 
-            this.lblC9.BackColor = System.Drawing.Color.Gray;
+            this.lblC9.BackColor = System.Drawing.Color.Red;
             this.lblC9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblC9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblC9.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,6 +254,11 @@
             this.panel2.Size = new System.Drawing.Size(415, 2);
             this.panel2.TabIndex = 5;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "File hv|*.hv|File log|*.log";
+            this.openFileDialog.Title = "Open hv or log file";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +312,7 @@
         private System.Windows.Forms.Button btnReloadFiles;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
+using OxyPlot.WindowsForms;
 
 namespace HV_Test
 {
@@ -39,6 +40,9 @@ namespace HV_Test
         private DataGeopsy[] data_g;
         private double[] nc;
         private double f0, amplitude, f1, sf, f0a, f0b;
+
+        private string hvFileName;
+        private string logFileName;
 
         public FormMain()
         {
@@ -148,6 +152,7 @@ namespace HV_Test
             myModel.Axes.Add(b);
 
             PlotForm graph = new PlotForm(myModel);
+                        
             graph.ShowDialog(this);
         }
 
@@ -199,16 +204,9 @@ namespace HV_Test
             bool logFileExist = File.Exists("HV_test.log");
             bool dataFileExist = File.Exists("HV_test.hv");
 
-            if (!dataFileExist)
+            if (!dataFileExist || !logFileExist)
             {
-                MessageBox.Show("HV_test.hv not found, please place this file into software directory and relaunch this.",
-                    "Error File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
-            }
-
-            if (!logFileExist)
-            {
-                MessageBox.Show("HV_test.log not found, please place this file into software directory and relaunch this..",
+                MessageBox.Show("HV_test.hv or HV_test.log not found ! \nPlease place this files into software directory and relaunch program.",
                     "Error File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
@@ -258,7 +256,6 @@ namespace HV_Test
                 data_g[n].Max = double.Parse(data[q].Split(Convert.ToChar('\t'))[3], CultureInfo.InvariantCulture);
                 data_g[n].Five = data_g[n].Max / data_g[n].Average;
             }
-
             checkCriteria();
         }
 

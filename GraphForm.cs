@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OxyPlot;
 using OxyPlot.Series;
+using OxyPlot.WindowsForms;
 
 namespace HV_Test
 {
@@ -32,14 +33,12 @@ namespace HV_Test
         {
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                ;
-
+                PngExporter.Export(myModel, saveFileDialog.FileName, 800, 600, OxyColors.White);
             }
         }
 
         private void PlotForm_Load(object sender, EventArgs e)
         {
-           // myModel.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
             pictureBox1.Model = myModel;
         }
     }
