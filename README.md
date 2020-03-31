@@ -8,7 +8,7 @@ This version allows to verify H/V curves calculated with fixed or variable windo
 
 # Usage
 
-Place "HV_test.log" and "HV_test.hv" in same directory of executable and run the program.
+Place "HV_test.log" and "HV_test.hv" files in same directory of executable and run the program.
 
 # Download
 
