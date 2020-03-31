@@ -6,6 +6,10 @@ http://sesame.geopsy.org/Papers/HV_User_Guidelines.pdf
 This tool automatically reads the parameters needed for the verification from the output files of the H/V toolbox (.hv and .log) of the GEOPSY software <http://www.geopsy.org/>.
 This version allows to verify H/V curves calculated with fixed or variable windows length.
 
+# Usage
+
+Place "HV_test.log" and "HV_test.hv" in same directory of executable and run the program.
+
 # Download
 
 [Donwload](https://github.com/theking0/HVTEST/releases/download/v1.0.1/release.1.0.1.zip) (Windows executable)
