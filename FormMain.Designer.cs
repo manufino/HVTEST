@@ -256,8 +256,8 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.Filter = "File hv|*.hv|File log|*.log";
-            this.openFileDialog.Title = "Open hv or log file";
+            this.openFileDialog.Filter = "File hv|*.hv";
+            this.openFileDialog.Title = "Open .hv file";
             // 
             // FormMain
             // 

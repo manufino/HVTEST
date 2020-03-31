@@ -206,9 +206,37 @@ namespace HV_Test
 
             if (!dataFileExist || !logFileExist)
             {
-                MessageBox.Show("HV_test.hv or HV_test.log not found ! \nPlease place this files into software directory and relaunch program.",
-                    "Error File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                DialogResult res = MessageBox.Show("HV_test.hv or HV_test.log not found ! \nLoad them now ?",
+                    "Error File Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if(res != DialogResult.Yes)
+                    Application.Exit();
+
+                if(openFileDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    string fn = openFileDialog.FileName;
+                    string fnv = fn.Remove(fn.Length - 3);
+
+                    if(File.Exists(fnv+".log"))
+                    {
+                        hvFileName = fn;
+                        logFileName = fnv + ".log";
+                    }
+                    else
+                        {
+                            string tx = "Not found " + fnv + ".log" + 
+                                "\nName of .log is file not equal to .hv file ?";
+
+                            MessageBox.Show(tx, "Log not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Application.Exit();
+                        }
+
+                }
+            }
+            else
+            {
+                hvFileName = "HV_test.hv";
+                logFileName = "HV_test.log";
             }
         }
 
@@ -216,8 +244,8 @@ namespace HV_Test
         {
             checkFileExists();
 
-            string[] log = File.ReadAllLines("HV_test.log");
-            string[] data = File.ReadAllLines("HV_test.hv");
+            string[] log = File.ReadAllLines(logFileName);
+            string[] data = File.ReadAllLines(hvFileName);
 
             numberOfWindows = Convert.ToInt32(data[1].Split(' ')[5]);
             timeWin = new TimeWindows[numberOfWindows];
