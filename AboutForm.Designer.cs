@@ -49,6 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 24);
+            this.label1.Location = new System.Drawing.Point(7, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(242, 88);
             this.label1.TabIndex = 1;
@@ -160,7 +161,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(255, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(255, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(127, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,6 +234,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(227, 272);
             this.pictureBox2.Name = "pictureBox2";
@@ -246,9 +248,9 @@
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 3);
+            this.label7.Location = new System.Drawing.Point(184, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(242, 21);
+            this.label7.Size = new System.Drawing.Size(65, 21);
             this.label7.TabIndex = 19;
             this.label7.Text = "V1.0.2";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,12 +263,25 @@
             this.panel4.Size = new System.Drawing.Size(382, 2);
             this.panel4.TabIndex = 20;
             // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel6.Location = new System.Drawing.Point(87, 5);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(56, 16);
+            this.linkLabel6.TabIndex = 21;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "HVTEST";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(394, 459);
+            this.Controls.Add(this.linkLabel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
@@ -287,7 +302,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -326,5 +341,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.LinkLabel linkLabel6;
     }
 }

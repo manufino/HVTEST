@@ -51,5 +51,10 @@ namespace HV_Test
         {
             System.Diagnostics.Process.Start("https://github.com/AlbaMat/HV-TEST");
         }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/theking0/HVTEST");
+        }
     }
 }
