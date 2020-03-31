@@ -208,7 +208,7 @@ namespace HV_Test
             {
                 MessageBox.Show("HV_test.hv or HV_test.log not found ! \nPlease place this files into software directory and relaunch program.",
                     "Error File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Close();
+                Application.Exit();
             }
         }
 
