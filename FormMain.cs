@@ -230,7 +230,6 @@ namespace HV_Test
                             MessageBox.Show(tx, "Log not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             Application.Exit();
                         }
-
                 }
             }
             else
