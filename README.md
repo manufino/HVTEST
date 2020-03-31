@@ -8,7 +8,7 @@ This version allows to verify H/V curves calculated with fixed or variable windo
 
 # Download
 
-https://github.com/theking0/HVTEST/releases
+[Donwload](https://github.com/theking0/HVTEST/releases/download/v1.0.1/release.1.0.1.zip) (Windows executable)
 
 # Screenshots
 
@@ -20,3 +20,7 @@ https://github.com/theking0/HVTEST/releases
 
 * https://github.com/AlbaMat/HV-TEST : Written in matlab, it helped me a lot to see this code.
 * https://github.com/oxyplot/oxyplot : Oxyplot library used for visualize graph.
+
+# Donation
+
+[![paypal](https://www.paypalobjects.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VRR5MDB7JQZFE&currency_code=EUR&source=url)
