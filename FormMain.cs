@@ -22,7 +22,7 @@ namespace HV_Test
         {
             public double StartTime;
             public double EndTime;
-            public int WindowLengh;
+            public double WindowLengh;
         }
 
         private struct DataGeopsy
@@ -201,8 +201,8 @@ namespace HV_Test
 
         private void checkFileExists()
         {
-            bool logFileExist = File.Exists("HV_test.log");
-            bool dataFileExist = File.Exists("HV_test.hv");
+            bool logFileExist = File.Exists("Velaj_c.log");
+            bool dataFileExist = File.Exists("Velaj_c.hv");
 
             if (!dataFileExist || !logFileExist)
             {
@@ -234,8 +234,8 @@ namespace HV_Test
             }
             else
             {
-                hvFileName = "HV_test.hv";
-                logFileName = "HV_test.log";
+                hvFileName = "Velaj_c.hv";
+                logFileName = "Velaj_c.log";
             }
         }
 
@@ -271,7 +271,7 @@ namespace HV_Test
             {
                 timeWin[j].StartTime = double.Parse(log[i].Split(Convert.ToChar('\t'))[0], CultureInfo.InvariantCulture);
                 timeWin[j].EndTime = double.Parse(log[i].Split(Convert.ToChar('\t'))[1], CultureInfo.InvariantCulture);
-                timeWin[j].WindowLengh = Convert.ToInt32(log[i].Split(Convert.ToChar('\t'))[2]);
+                timeWin[j].WindowLengh = Convert.ToDouble(log[i].Split(Convert.ToChar('\t'))[2]);
                 nc[j] = timeWin[j].WindowLengh * numberOfWindows * f0;
             }
 
