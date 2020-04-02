@@ -12,7 +12,7 @@ Place "HV_test.log" and "HV_test.hv" files in same directory of executable and r
 
 # Download
 
-[Donwload v1.0.3](https://github.com/theking0/HVTEST/releases/download/v1.0.3/release.1.0.3.zip) (Windows executable)
+[Donwload v1.0.4](https://github.com/theking0/HVTEST/releases/download/v1.0.4/release.1.0.4.zip) (Windows executable)
 
 # Screenshots
 
