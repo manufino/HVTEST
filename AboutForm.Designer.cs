@@ -252,7 +252,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 21);
             this.label7.TabIndex = 19;
-            this.label7.Text = "V1.0.4";
+            this.label7.Text = "V1.0.5";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4

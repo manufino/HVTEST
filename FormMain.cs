@@ -60,11 +60,6 @@ namespace HV_Test
             about.ShowDialog(this);
         }
 
-        private void btnReloadFiles_Click(object sender, EventArgs e)
-        {
-            loadFiles();
-        }
-
         private void btnViewGraph_Click(object sender, EventArgs e)
         {
             PlotModel myModel = new PlotModel();
@@ -104,10 +99,8 @@ namespace HV_Test
 
                 XYpoint = new DataPoint(g.Frequency, g.Average);
                 linePoints.Points.Add(XYpoint);
-
                 XYpoint = new DataPoint(g.Frequency, g.Min);
                 lineMin.Points.Add(XYpoint);
-
                 XYpoint = new DataPoint(g.Frequency, g.Max);
                 lineMax.Points.Add(XYpoint);
             }
@@ -124,8 +117,7 @@ namespace HV_Test
 
             lineV1.Points.Add(new DataPoint(f0/4, vmax));
             lineV1.Points.Add(new DataPoint(f0/4, 0));
-
-
+            
             myModel.Series.Add(linePoints);
             myModel.Series.Add(lineMin);
             myModel.Series.Add(lineMax);
@@ -147,7 +139,6 @@ namespace HV_Test
             b.FontSize = 8;
             b.TitleFontSize = 9;
 
-
             myModel.Axes.Add(a);
             myModel.Axes.Add(b);
 
@@ -156,9 +147,33 @@ namespace HV_Test
             graph.ShowDialog(this);
         }
 
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string fn = openFileDialog.FileName;
+                string fnv = fn.Remove(fn.Length - 3);
+
+                if (File.Exists(fnv + ".log"))
+                {
+                    hvFileName = fn;
+                    logFileName = fnv + ".log";
+                    loadFiles();
+                }
+                else
+                {
+                    string tx = "Not found " + fnv + ".log" +
+                        "\nName of .log is file not equal to .hv file ?";
+
+                    MessageBox.Show(tx, "Log not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+
         private void resetLabels()
         {
-            string rstStr = "--- >>";
+            string rstStr = "---------";
             Color rstColor = Color.Gray;
             Color backColor = Color.White;
 
@@ -199,50 +214,8 @@ namespace HV_Test
             lblC9.BackColor = backColor;
         }
 
-        private void checkFileExists()
-        {
-            bool logFileExist = File.Exists("Velaj_c.log");
-            bool dataFileExist = File.Exists("Velaj_c.hv");
-
-            if (!dataFileExist || !logFileExist)
-            {
-                DialogResult res = MessageBox.Show("HV_test.hv or HV_test.log not found ! \nLoad them now ?",
-                    "Error File Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-                if(res != DialogResult.Yes)
-                    Application.Exit();
-
-                if(openFileDialog.ShowDialog(this) == DialogResult.OK)
-                {
-                    string fn = openFileDialog.FileName;
-                    string fnv = fn.Remove(fn.Length - 3);
-
-                    if(File.Exists(fnv+".log"))
-                    {
-                        hvFileName = fn;
-                        logFileName = fnv + ".log";
-                    }
-                    else
-                        {
-                            string tx = "Not found " + fnv + ".log" + 
-                                "\nName of .log is file not equal to .hv file ?";
-
-                            MessageBox.Show(tx, "Log not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Application.Exit();
-                        }
-                }
-            }
-            else
-            {
-                hvFileName = "Velaj_c.hv";
-                logFileName = "Velaj_c.log";
-            }
-        }
-
         private void loadFiles()
         {
-            checkFileExists();
-
             string[] log = File.ReadAllLines(logFileName);
             string[] data = File.ReadAllLines(hvFileName);
 
@@ -436,7 +409,7 @@ namespace HV_Test
         private void FormMain_Load(object sender, EventArgs e)
         {
             resetLabels();
-            loadFiles();
+            //loadFiles();
         }
     }
 }

@@ -42,7 +42,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnViewGraph = new System.Windows.Forms.Button();
-            this.btnReloadFiles = new System.Windows.Forms.Button();
+            this.btnOpenFile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -216,7 +216,7 @@
             // 
             this.btnViewGraph.BackColor = System.Drawing.Color.Gainsboro;
             this.btnViewGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewGraph.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewGraph.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewGraph.Location = new System.Drawing.Point(12, 386);
             this.btnViewGraph.Name = "btnViewGraph";
             this.btnViewGraph.Size = new System.Drawing.Size(98, 26);
@@ -225,18 +225,19 @@
             this.btnViewGraph.UseVisualStyleBackColor = false;
             this.btnViewGraph.Click += new System.EventHandler(this.btnViewGraph_Click);
             // 
-            // btnReloadFiles
+            // btnOpenFile
             // 
-            this.btnReloadFiles.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnReloadFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReloadFiles.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReloadFiles.Location = new System.Drawing.Point(12, 425);
-            this.btnReloadFiles.Name = "btnReloadFiles";
-            this.btnReloadFiles.Size = new System.Drawing.Size(98, 26);
-            this.btnReloadFiles.TabIndex = 3;
-            this.btnReloadFiles.Text = "Reload Files";
-            this.btnReloadFiles.UseVisualStyleBackColor = false;
-            this.btnReloadFiles.Click += new System.EventHandler(this.btnReloadFiles_Click);
+            this.btnOpenFile.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFile.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenFile.Location = new System.Drawing.Point(12, 425);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(98, 26);
+            this.btnOpenFile.TabIndex = 3;
+            this.btnOpenFile.Text = "Open File";
+            this.btnOpenFile.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOpenFile.UseVisualStyleBackColor = false;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // panel1
             // 
@@ -268,7 +269,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnViewGraph);
-            this.Controls.Add(this.btnReloadFiles);
+            this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblC9);
@@ -309,7 +310,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnViewGraph;
-        private System.Windows.Forms.Button btnReloadFiles;
+        private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
