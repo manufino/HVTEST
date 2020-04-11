@@ -62,6 +62,8 @@ namespace HV_Test
 
         private void btnViewGraph_Click(object sender, EventArgs e)
         {
+            if (data_g == null)
+                return;
             PlotModel myModel = new PlotModel();
             myModel.Series.Add(new FunctionSeries());
 
@@ -219,7 +221,9 @@ namespace HV_Test
             string[] log = File.ReadAllLines(logFileName);
             string[] data = File.ReadAllLines(hvFileName);
 
-            numberOfWindows = Convert.ToInt32(data[1].Split(' ')[5]);
+            this.Text = "SESAME Criteria - HV TEST : " + hvFileName;
+            var nw = data[1].Split('=').Last();
+            numberOfWindows = Convert.ToInt32(nw);
             timeWin = new TimeWindows[numberOfWindows];
             nc = new double[numberOfWindows];
             data_g = new DataGeopsy[data.Length-7];
@@ -248,7 +252,18 @@ namespace HV_Test
                 nc[j] = timeWin[j].WindowLengh * numberOfWindows * f0;
             }
 
-            for (int q = 7, n=0; q < data.Length; q++,n++)
+            int pos = 0;
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                if(data[i].ToString().Contains("# Frequency	Average	Min	Max"))
+                {
+                    pos = i + 1;
+                    break;
+                }
+            }
+
+            for (int q = pos, n=0; q < data.Length; q++,n++)
             {
                 data_g[n].Frequency = double.Parse(data[q].Split(Convert.ToChar('\t'))[0], CultureInfo.InvariantCulture);
                 data_g[n].Average = double.Parse(data[q].Split(Convert.ToChar('\t'))[1], CultureInfo.InvariantCulture);
